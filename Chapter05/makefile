@@ -2,8 +2,8 @@ SRC_DIR := ./code
 OBJ_DIR := .
 SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
-LDFLAGS := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-CPPFLAGS := -g -Wall -fpermissive -std=c++17
+LDFLAGS := -L/opt/homebrew/opt/sfml@2/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+CPPFLAGS := -g -Wall -fpermissive -std=c++17 -I/opt/homebrew/opt/sfml@2/include
 CXXFLAGS :=
 TARGET := game.out
 
@@ -18,3 +18,4 @@ run:
 
 clean:
 	rm $(TARGET) *.o
+
